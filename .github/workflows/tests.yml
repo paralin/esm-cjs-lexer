@@ -1,0 +1,26 @@
+name: Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "main" ]
+
+# Builds images for target boards.
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+      - name: Run cargo tests
+        run: cargo test
+      - name: Run wasm-pack tests in Chrome
+        run: wasm-pack test --headless --chrome
+      - name: Run wasm-pack tests in Firefox
+        run: wasm-pack test --headless --firefox
