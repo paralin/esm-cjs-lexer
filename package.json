@@ -1,0 +1,19 @@
+{
+  "name": "@aptre-cjs/esm-cjs-lexer",
+  "description": "WASM module to parse the `module.exports` of a commonjs module.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paralin/esm-cjs-lexer.sh"
+  },
+  "files": [
+    "dist/esm_cjs_lexer_bg.wasm",
+    "dist/esm_cjs_lexer.js",
+    "dist/esm_cjs_lexer.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "dist/esm_cjs_lexer.js",
+  "types": "dist/esm_cjs_lexer.d.ts"
+}
